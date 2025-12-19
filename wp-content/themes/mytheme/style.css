@@ -1,0 +1,21 @@
+@import url('reset.css');
+@import url('main.css');
+
+/* Глобальные настройки — уже учтены в main.css, но оставим для структуры */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

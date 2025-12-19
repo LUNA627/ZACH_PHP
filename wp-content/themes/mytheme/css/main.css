@@ -1,0 +1,376 @@
+/* === Сброс и основные стили === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f9fbfd;
+    color: #2d3748;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9d3eea;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* === Контейнер === */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* === Шапка === */
+.header_section {
+    background-color: #cadefc;
+    padding: 20px 0;
+}
+
+.header_section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header_logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Меню */
+.header_nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    align-items: center;
+}
+
+.header_nav li {
+    margin: 0;
+}
+
+.header_nav a {
+    color: #2d3748;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.header_nav a:hover {
+    color: #9d3eea;
+}
+
+/* Поле поиска */
+/* Обёртка формы */
+.searchform {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Поле ввода */
+#s {
+    padding: 5px 14px;
+    border: 1px solid #3f72af;
+    border-radius: 8px;
+    background-color: #cadefc;
+    color: #2d3748;
+    font-size: 14px;
+    width: 200px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#s:focus {
+    outline: none;
+    border-color: #9d3eea;
+    box-shadow: 0 0 0 2px rgba(157, 62, 234, 0.2);
+}
+
+/* Кнопка "Поиск" */
+#searchsubmit {
+    padding: 5px 16px;
+    background-color: #3f72af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#searchsubmit:hover {
+    background-color: #2a5a9c;
+    transform: translateY(-1px);
+}
+
+/* === Основной контент (главная) === */
+.main {
+    padding: 40px 0;
+}
+
+.main .container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 250px;
+}
+
+.post_item {
+    background: #cca8e9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    /* border:  1px solid #3f72af; */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post_item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.post_title a {
+    color: #9d3eea;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.post_title a:hover {
+    text-decoration: underline;
+}
+
+.post_meta {
+    font-size: 14px;
+    color: #3f72af;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post_meta span::before {
+    content: "• ";
+    color: #0b478e;
+}
+
+.post_meta span:first-child::before {
+    content: "";
+}
+
+
+/* === Сайдбар с категориями === */
+.categories_widget {
+    border: 2px solid #3f72af;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.categories_widget h3 {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #2d3748;
+}
+
+.categories_list {
+    list-style: none;
+}
+
+.categories_list li {
+    margin: 6px 0;
+}
+
+.categories_list a {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: #4da6ff;
+}
+
+.categories_list a:hover {
+    color: #3f72af;
+    background: #cadefc;
+}
+
+
+/* === Отдельные страницы и записи === */
+.main_post,
+.main_page {
+    padding: 40px 0;
+}
+
+.post_item_content,
+.page_item_content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 2px solid #3f72af;
+    border-radius: 12px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.post_item_title,
+.page_item_title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2d3748;
+}
+
+/* Метаинформация на странице записи */
+.post_item_content p:last-child,
+.post_item_content p:nth-last-child(2) {
+    margin-top: 20px;
+    color: #3f72af;
+    font-size: 14px;
+}
+
+/* Изображения */
+.post_item_content img,
+.page_item_content img {
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* === Таблицы — без обрезания === */
+.post_item_content table,
+.page_item_content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 2px solid #3f72af;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.post_item_content th,
+.page_item_content th {
+    background-color: #3f72af;
+    color: white;
+    font-weight: 600;
+    padding: 12px 12px;
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.post_item_content td,
+.page_item_content td {
+    padding: 12px 12px;
+    border-bottom: 1px solid #cadefc;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+}
+
+.post_item_content tr:last-child td,
+.page_item_content tr:last-child td {
+    border-bottom: none;
+}
+
+.post_item_content tr:hover,
+.page_item_content tr:hover {
+    background-color: #f0f4fc;
+}
+
+
+/* === Общие отступы для текста === */
+.post_item_content p,
+.page_item_content p,
+.post_item_content ul,
+.page_item_content ul,
+.post_item_content ol,
+.page_item_content ol {
+    margin: 12px 0;
+}
+
+
+/* === Футер === */
+.footer_section {
+    background: #cadefc;
+    padding: 20px 0;
+    border-top: 2px solid #3f72af;
+    margin-top: 40px;
+}
+
+.footer_section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer_copyright {
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.footer_nav {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.footer_nav a {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #2d3748;
+}
+
+.footer_nav a:hover {
+    background: #3f72af;
+    color: white;
+}
+
+
+.post_meta {
+    margin-top: 30px;
+    border-top: 2px solid #3f72af;
+    color: #3f72af;
+    font-size: 14px;
+}
+
+
+
+
